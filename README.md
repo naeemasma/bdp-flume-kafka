@@ -1,13 +1,16 @@
 Project Goal and Problem Statement:
+
 This project aims to set up a data processing pipeline for ingesting Twitter streaming data filtered by some criteria and move it into Elasticsearch for visualization and insights.
 
 YouTube Video URL
 https://youtu.be/ijskuAePeLs
 
 Expected results:
+
 The outcome of this processing pipeline is to demonstrate graphs and maps for visualizing tweets data to compare the most popular video-on-demand over-the-top streaming services like Netflix, Amazon Prime Video, Disney Plus, and Hulu. We will pass each tweet message through the StanfordCoreNLP library to conduct sentiment analysis that scores it from 0 to 4 based on whether the analysis comes back with Very Negative, Negative, Neutral, Positive, or Very Positive, respectively.	
  
 Processing Pipeline:
+
 •	Collection Tier: We will use Apache Flume distributed, reliable service for collecting and moving large amounts of data.
 o	Flume Twitter Data Source fetches Twitter streaming data filtered by video-on-demand service tags like Netflix, Amazon Prime Video, Disney Plus, and Hulu.
 
