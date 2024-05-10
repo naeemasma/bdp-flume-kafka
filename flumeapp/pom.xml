@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>cscie88.assignments</groupId>
+  <artifactId>flumeapp</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>flumeapp</name>
+  <description>flumeapp</description>
+  <packaging>jar</packaging>
+  <properties>
+		<java.version>14</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+ 		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	<dependencies>	
+	   <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
+            <version>1.10</version>
+        </dependency>
+	   <!-- https://mvnrepository.com/artifact/org.twitter4j/twitter4j-core -->
+		<dependency>
+		    <groupId>org.twitter4j</groupId>
+		    <artifactId>twitter4j-core</artifactId>
+		    <version>4.0.7</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.flume/flume-ng-configuration -->
+		<dependency>
+		    <groupId>org.apache.flume</groupId>
+		    <artifactId>flume-ng-configuration</artifactId>
+		    <version>1.11.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.flume/flume-ng-core -->
+		<dependency>
+		    <groupId>org.apache.flume</groupId>
+		    <artifactId>flume-ng-core</artifactId>
+		    <version>1.11.0</version>
+		</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.flume/flume-ng-sdk -->
+		<dependency>
+		    <groupId>org.apache.flume</groupId>
+		    <artifactId>flume-ng-sdk</artifactId>
+		    <version>1.11.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.flink/flink-connector-kafka -->
+		<dependency>
+		    <groupId>org.apache.flink</groupId>
+		    <artifactId>flink-connector-kafka</artifactId>
+		    <version>1.16.0</version>
+		</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.flume.flume-shared/flume-shared-kafka -->
+		<dependency>
+		    <groupId>org.apache.flume.flume-shared</groupId>
+		    <artifactId>flume-shared-kafka</artifactId>
+		    <version>1.11.0</version>
+		</dependency>
+		<dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>4.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.stanford.nlp</groupId>
+            <artifactId>stanford-corenlp</artifactId>
+            <version>4.5.1</version>
+            <classifier>models</classifier>
+	</dependency>
+
+	</dependencies>
+	<build>
+	<plugins>
+		<plugin>
+		    <groupId>org.apache.maven.plugins</groupId>
+		    <artifactId>maven-assembly-plugin</artifactId>
+		    <executions>
+		        <execution>
+		            <phase>package</phase>
+		            <goals>
+		                <goal>single</goal>
+		            </goals>
+		            <configuration>
+		                <archive>
+		                <manifest>
+		                    <mainClass>
+		                        cscie88.assignments.FlumeTwitterSource
+		                    </mainClass>
+		                </manifest>
+		                </archive>
+		                <descriptorRefs>
+		                    <descriptorRef>jar-with-dependencies</descriptorRef>
+		                </descriptorRefs>
+		            </configuration>
+		        </execution>
+		    </executions>
+		</plugin>
+	</plugins>
+	</build>
+</project>
