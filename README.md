@@ -13,13 +13,17 @@ The outcome of this processing pipeline is to demonstrate graphs and maps for vi
 Processing Pipeline:
 
 •	Collection Tier: We will use Apache Flume distributed, reliable service for collecting and moving large amounts of data.
+
 o	Flume Twitter Data Source fetches Twitter streaming data filtered by video-on-demand service tags like Netflix, Amazon Prime Video, Disney Plus, and Hulu.
 
 •	Messaging Tier: Apache Kafka
+
 o	Flume will transport collected data to a Kafka topic for further processing
 
 •	Stream Processing Tier: Kafka Elasticsearch Sink Connector
+
 o	Kafka Elasticsearch sink service will write data from a topic in Apache Kafka to an index in Elasticsearch
 
 •	Visualization Tier: Kibana source-available data visualization dashboard software for Elasticsearch.
+
 o	Kibana user interface will allow us to explore which video-on-demand services receive the most positive or negative tweets on a given day/ hour.	
